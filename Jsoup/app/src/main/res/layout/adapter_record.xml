@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:id="@+id/record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/recordName"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="text"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/recordsource"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="text"
+            android:layout_marginLeft="200dp"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:id="@+id/recordtime"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="text"
+            android:textSize="18sp">
+
+        </TextView>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvhistoryName"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="text"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/tvhistorysource"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="text"
+            android:layout_marginLeft="200dp"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:id="@+id/tvhistorytime"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="text"
+            android:textSize="18sp">
+
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/delete_button"
+        android:layout_width="96dp"
+        android:layout_height="match_parent"
+        android:background="#e53935"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="#333333"
+        android:textSize="18sp"></TextView>
+</LinearLayout>

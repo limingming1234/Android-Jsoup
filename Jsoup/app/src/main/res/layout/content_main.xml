@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.administrator.myapplication.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        >
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50.0dip"
+        android:background="#FFFFFF"
+        >
+
+        <!--layout_weight这个属性为权重，让四个button平分这个linearLayout-->
+        <Button
+            android:id="@+id/viewzhihu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="知乎日报"
+            android:textColor="#000000"
+            android:textSize="15dip"
+            />
+
+        <Button
+            android:id="@+id/viewgk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="果壳"
+            android:textColor="#000000"
+            android:textSize="15dip"
+            />
+
+        <Button
+            android:id="@+id/viewjs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="简书"
+            android:textColor="#000000"
+            android:textSize="15dip"
+            />
+        <Button
+            android:id="@+id/viewcn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="网易创业Club"
+            android:textColor="#000000"
+            android:textSize="12dip"
+            />
+
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/info_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#cccccc"
+        android:dividerHeight="0.5dp"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

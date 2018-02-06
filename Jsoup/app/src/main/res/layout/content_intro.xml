@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.administrator.myapplication.IntroActivity"
+    tools:showIn="@layout/activity_intro">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="        本软件利用Jsoup分别抓取知乎日报、果壳、简书、网易创业CLUB首页最新数据。暂时具有查看历史记录和收藏功能，收藏按钮在页面右上角。第一次做安卓开发，如有疏漏之处恳请大家批评指正，我也会不断更新app，努力增加新的功能并优化app。本app是为和我一样对以上网站有兴趣的朋友设计的，仅供学习使用，如有侵权，请与我联系。"
+        android:textSize="18sp"
+        />
+
+</android.support.constraint.ConstraintLayout>

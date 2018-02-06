@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.administrator.myapplication.SecondActivity">
+
+
+    <!-- 获取网站的标题-->
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <!--开始加载提示-->
+    <TextView
+        android:id="@+id/text_beginLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
+        android:text="" />
+
+    <!--获取加载进度-->
+    <TextView
+        android:id="@+id/text_Loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_beginLoading"
+        android:text="" />
+
+    <!--结束加载提示-->
+    <TextView
+        android:id="@+id/text_endLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Loading"
+        android:text="" />
+
+    <!--显示网页区域-->
+    <WebView
+        android:id="@+id/webView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/text_endLoading"
+        android:layout_marginTop="10dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_like_name"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Title"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="372dp" />
+</RelativeLayout>
