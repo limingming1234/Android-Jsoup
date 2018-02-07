@@ -30,12 +30,13 @@ public class SecondActivity extends Activity {
     String time;
     String name;
     String source;
+    private MySQLiteHelper mySQLiteHelper;  // 申明一个数据库管理助手对象
+    private SQLiteDatabase database;// 申明一个数据库对象
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        MySQLiteHelper mySQLiteHelper;  // 申明一个数据库管理助手对象
-        final SQLiteDatabase database;// 申明一个数据库对象
+
         // 构造一个数据库管理助手对象
         mySQLiteHelper=new MySQLiteHelper(this,"yuedu.db",null,1);
         //该方法创建一个数据库，可以读写，磁盘满了会自动更改模式为只读模式，getWritableDatabase()盘满报错
@@ -166,6 +167,7 @@ public class SecondActivity extends Activity {
             mWebview.destroy();
             mWebview = null;
         }
+        database.close();
         super.onDestroy();
     }
 }

@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity
     private List<gkBean> list1 = new ArrayList<>();
     private List<jianshuBean> list2 = new ArrayList<>();
     private List<cnBean> list3 = new ArrayList<>();
+    private MySQLiteHelper mySQLiteHelper;  // 申明一个数据库管理助手对象
+    private SQLiteDatabase database;// 申明一个数据库对象
     private ProgressDialog dialog;
     private ProgressDialog dialog1;
     private ProgressDialog dialog2;
@@ -82,8 +84,7 @@ public class MainActivity extends AppCompatActivity
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        MySQLiteHelper mySQLiteHelper;  // 申明一个数据库管理助手对象
-        final SQLiteDatabase database;// 申明一个数据库对象
+
         // 构造一个数据库管理助手对象
         mySQLiteHelper=new MySQLiteHelper(this,"yuedu.db",null,1);
         //该方法创建一个数据库，可以读写，磁盘满了会自动更改模式为只读模式，getWritableDatabase()盘满报错
@@ -774,5 +775,10 @@ public class MainActivity extends AppCompatActivity
                 }
             }).show();
         }
+    }
+    @Override
+    protected void onDestroy(){
+        database.close();
+        super.onDestroy();
     }
 }

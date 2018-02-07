@@ -31,6 +31,8 @@ public class RecordActivity extends AppCompatActivity {
     private RecordAdapter adapter=new RecordAdapter(list, RecordActivity.this);
     @BindView(R.id.info_list_record)
     ListView info_list_record;
+    private MySQLiteHelper mySQLiteHelper;  // 申明一个数据库管理助手对象
+    private SQLiteDatabase database;// 申明一个数据库对象
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +41,7 @@ public class RecordActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
         list.clear();
-        MySQLiteHelper mySQLiteHelper;  // 申明一个数据库管理助手对象
-        final SQLiteDatabase database;// 申明一个数据库对象
+
         // 构造一个数据库管理助手对象
         mySQLiteHelper=new MySQLiteHelper(this,"yuedu.db",null,1);
         //该方法创建一个数据库，可以读写，磁盘满了会自动更改模式为只读模式，getWritableDatabase()盘满报错
@@ -137,5 +138,10 @@ public class RecordActivity extends AppCompatActivity {
                 ButterKnife.bind(this, view);
             }
         }
+    }
+    @Override
+    protected void onDestroy(){
+        database.close();
+        super.onDestroy();
     }
 }
