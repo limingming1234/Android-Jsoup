@@ -26,7 +26,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-
 import com.example.administrator.Jsoupread.adapter.CnAdapter;
 import com.example.administrator.Jsoupread.adapter.JsAdapter;
 import com.example.administrator.Jsoupread.adapter.MyAdapter;
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         // 构造一个数据库管理助手对象
         mySQLiteHelper=new MySQLiteHelper(this,"yuedu.db",null,1);
         //该方法创建一个数据库，可以读写，磁盘满了会自动更改模式为只读模式，getWritableDatabase()盘满报错
@@ -411,10 +409,8 @@ public class MainActivity extends AppCompatActivity
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             //获取知乎日报的数据并写入到zhihuBean中
             Elements links=doc.select("div.box");
-
             for (Element e : links) {
                 String targetUrl = e.select("a").attr("href");
                 String img = e.select("img").attr("src");
@@ -426,7 +422,6 @@ public class MainActivity extends AppCompatActivity
                 ZhihuBean.setName(zhihuName);
                 list.add(ZhihuBean);
             }
-
             if(list.size()<1){
                 zhihuBean ZhihuBean = new zhihuBean();
                 ZhihuBean.setName("抓取知乎日报数据失败！请等待修复或与我联系。");
@@ -438,7 +433,6 @@ public class MainActivity extends AppCompatActivity
         }
     };
 
-
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -447,7 +441,6 @@ public class MainActivity extends AppCompatActivity
             show();
         }
     };
-
     // 将数据填充到ListView中
     private void show() {
         if (!list.isEmpty()) {
@@ -471,7 +464,6 @@ public class MainActivity extends AppCompatActivity
             }
 
             //获取果壳的数据并写入到gkBean中
-
             Elements links=doc.select("div.focus-content").select("a");
             for (Element e :links ) {
                 String targetUrl = e.select("a").attr("href");
@@ -507,7 +499,6 @@ public class MainActivity extends AppCompatActivity
         }
     };
 
-
     Handler handler1 = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -516,7 +507,6 @@ public class MainActivity extends AppCompatActivity
             show1();
         }
     };
-
     // 将数据填充到ListView中
     private void show1() {
         if (!list1.isEmpty()) {
@@ -525,7 +515,6 @@ public class MainActivity extends AppCompatActivity
         }
         dialog1.dismiss();
     }
-
     //新建线程
     Runnable runnable2 = new Runnable() {
         @Override
@@ -539,7 +528,6 @@ public class MainActivity extends AppCompatActivity
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             //获取简书的数据并写入到jianshuBean中
             Elements links=doc.select("ul.note-list").select("li.have-img");
             for (Element e : links) {
@@ -547,6 +535,7 @@ public class MainActivity extends AppCompatActivity
                 String img =e.select("a.wrap-img").select("img").attr("src");
                 String jianshuName = e.select("a.title").text();
                 String jianshuIntroduction=e.select("p.abstract").text();
+
                 jianshuBean JianshuBean = new jianshuBean();
                 JianshuBean.setTargetUrl("https://www.jianshu.com"+targetUrl);
                 JianshuBean.setImg("https:"+img);
@@ -568,7 +557,6 @@ public class MainActivity extends AppCompatActivity
         }
     };
 
-
     Handler handler2 = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -577,7 +565,6 @@ public class MainActivity extends AppCompatActivity
             show2();
         }
     };
-
     // 将数据填充到ListView中
     private void show2() {
         if (!list2.isEmpty()) {
@@ -599,7 +586,6 @@ public class MainActivity extends AppCompatActivity
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             //获取网易创业CLUB的数据并写入到cnBean中
             Elements links=doc.select("div.item-Text");
             for (Element e :links ) {
@@ -622,7 +608,6 @@ public class MainActivity extends AppCompatActivity
         }
     };
 
-
     Handler handler3 = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -631,7 +616,6 @@ public class MainActivity extends AppCompatActivity
             show3();
         }
     };
-
     // 将数据填充到ListView中
     private void show3() {
         if (!list3.isEmpty()) {
@@ -640,7 +624,6 @@ public class MainActivity extends AppCompatActivity
         }
         dialog3.dismiss();
     }
-
     // 重新抓取
     public void switchOver() {
         if (isNetworkAvailable(MainActivity.this)) {
@@ -670,7 +653,6 @@ public class MainActivity extends AppCompatActivity
             }).show();
         }
     }
-
     // 判断是否有可用的网络连接
     public boolean isNetworkAvailable(Activity activity) {
         Context context = activity.getApplicationContext();
@@ -687,7 +669,6 @@ public class MainActivity extends AppCompatActivity
         }
         return false;
     }
-
     // 重新抓取
     public void switchOver1() {
         if (isNetworkAvailable(MainActivity.this)) {
@@ -746,7 +727,6 @@ public class MainActivity extends AppCompatActivity
             }).show();
         }
     }
-
     // 重新抓取
     public void switchOver3() {
         if (isNetworkAvailable(MainActivity.this)) {
