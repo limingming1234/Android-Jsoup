@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication.adapter;
+package com.example.administrator.Jsoupread.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.administrator.myapplication.R;
-import com.example.administrator.myapplication.bean.cnBean;
+import com.example.administrator.Jsoupread.R;
+import com.example.administrator.Jsoupread.bean.cnBean;
 
 
 import java.util.List;

@@ -1,15 +1,16 @@
-package com.example.administrator.myapplication.bean;
+package com.example.administrator.Jsoupread.bean;
 
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2018/2/1.
+ * Created by Administrator on 2018/2/4.
  */
 
-public class zhihuBean implements Serializable {
+public class jianshuBean implements Serializable {
     private String targetUrl;
     private String img;
     private String name;
+    private String introduction;
 
     public String getTargetUrl() {
         return targetUrl;
@@ -34,5 +35,11 @@ public class zhihuBean implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+    public String getIntroduction() {
+        return introduction;
+    }
 
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
 }

@@ -1,13 +1,14 @@
-package com.example.administrator.myapplication.bean;
+package com.example.administrator.Jsoupread.bean;
 
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2018/2/4.
+ * Created by Administrator on 2018/2/3.
  */
 
-public class cnBean implements Serializable {
+public class gkBean implements Serializable {
     private String targetUrl;
+    private String img;
     private String name;
 
 
@@ -19,6 +20,14 @@ public class cnBean implements Serializable {
         this.targetUrl = targetUrl;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     public String getName() {
         return name;
     }
@@ -26,4 +35,6 @@ public class cnBean implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

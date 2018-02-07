@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication;
+package com.example.administrator.Jsoupread;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

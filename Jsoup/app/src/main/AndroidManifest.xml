@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.administrator.myapplication">
+    package="com.example.administrator.Jsoupread">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -10,10 +10,11 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:label="阅读Read"
         android:theme="@style/AppTheme">
-        <activity android:name=".SecondActivity" />
+        <activity android:name="com.example.administrator.Jsoupread.SecondActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.administrator.Jsoupread.MainActivity"
             android:label="阅读"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,17 +24,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ThirdActivity"
+            android:name="com.example.administrator.Jsoupread.ThirdActivity"
             android:label="我的收藏（左滑可删除）" />
         <activity
-            android:name=".RecordActivity"
+            android:name="com.example.administrator.Jsoupread.RecordActivity"
             android:label="最近阅读历史（自动保留十五条）"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".IntroActivity"
+            android:name="com.example.administrator.Jsoupread.IntroActivity"
             android:label="功能介绍"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ConnectActivity"
+        <activity android:name="com.example.administrator.Jsoupread.ConnectActivity"
             android:label="与我联系"></activity>
     </application>
 

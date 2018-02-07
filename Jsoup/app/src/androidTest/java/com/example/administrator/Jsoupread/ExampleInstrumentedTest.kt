@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication
+package com.example.administrator.Jsoupread
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

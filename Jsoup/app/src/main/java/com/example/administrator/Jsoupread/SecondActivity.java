@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication;
+package com.example.administrator.Jsoupread;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -12,14 +12,13 @@ import android.support.design.widget.Snackbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import com.example.administrator.myapplication.bean.MySQLiteHelper;
+import com.example.administrator.Jsoupread.bean.MySQLiteHelper;
 
 
 public class SecondActivity extends Activity {

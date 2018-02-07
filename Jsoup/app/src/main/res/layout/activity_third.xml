@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.myapplication.ThirdActivity">
-    <com.example.administrator.myapplication.SideslipListView
+    tools:context="com.example.administrator.Jsoupread.ThirdActivity">
+    <com.example.administrator.Jsoupread.SideslipListView
         android:id="@+id/info_list_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

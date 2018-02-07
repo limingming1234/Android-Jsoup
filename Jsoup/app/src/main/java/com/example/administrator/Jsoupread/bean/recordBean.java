@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication.bean;
+package com.example.administrator.Jsoupread.bean;
 
 import java.io.Serializable;
 

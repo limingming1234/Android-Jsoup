@@ -1,13 +1,11 @@
-package com.example.administrator.myapplication;
+package com.example.administrator.Jsoupread;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -17,8 +15,8 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.example.administrator.myapplication.bean.MySQLiteHelper;
-import com.example.administrator.myapplication.bean.recordBean;
+import com.example.administrator.Jsoupread.bean.MySQLiteHelper;
+import com.example.administrator.Jsoupread.bean.recordBean;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

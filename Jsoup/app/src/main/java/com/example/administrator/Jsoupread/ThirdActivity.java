@@ -1,6 +1,5 @@
-package com.example.administrator.myapplication;
+package com.example.administrator.Jsoupread;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -15,8 +14,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.administrator.myapplication.bean.MySQLiteHelper;
-import com.example.administrator.myapplication.bean.historyBean;
+import com.example.administrator.Jsoupread.bean.MySQLiteHelper;
+import com.example.administrator.Jsoupread.bean.historyBean;
 import java.util.ArrayList;
 import java.util.List;
 import butterknife.BindView;
