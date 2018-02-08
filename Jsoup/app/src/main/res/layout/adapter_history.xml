@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="text"
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="100dp"
             android:textSize="18sp"></TextView>
 
         <TextView

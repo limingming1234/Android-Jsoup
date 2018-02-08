@@ -2,12 +2,10 @@ package com.example.administrator.Jsoupread;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
-import android.content.ContentValues;
+import android.app.ProgressDialog;;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -105,44 +103,6 @@ public class MainActivity extends AppCompatActivity
                         intent.putExtra("name", name);
                         intent.putExtra("source", source);
                         startActivity(intent);
-                        Cursor cursor = database.query("recordtable", new String[]{"id", "name", "targeturl", "source", "time"}, null, null, null, null, "time");
-                        int tag = 0;
-                        int tag1=0;
-                        while (cursor.moveToNext()) {
-                            int urlindex = cursor.getColumnIndex("targeturl");
-                            String url = cursor.getString(urlindex);
-
-                            tag++;
-                            if (url.equals(list.get(i).getTargetUrl())) {
-                                ContentValues values = new ContentValues();
-                                values.put("time", time);
-                                database.update("recordtable", values, "targeturl=?", new String[]{list.get(i).getTargetUrl()});
-                                tag1=1;
-                            }
-                        }
-                        if(tag1==0){
-                            if (tag < 15) {
-                                ContentValues contentValues = new ContentValues();
-                                contentValues.put("name", name);
-                                contentValues.put("targeturl", list.get(i).getTargetUrl());
-                                contentValues.put("source", source);
-                                contentValues.put("time", time);
-                                database.insert("recordtable", null, contentValues);
-                            }
-                            else if(tag==15){
-                                cursor.moveToFirst();
-                                int timeindex = cursor.getColumnIndex("time");
-                                String time1 = cursor.getString(timeindex);
-                                database.delete("recordtable","time=?",new String[]{time1});
-                                ContentValues contentValues = new ContentValues();
-                                contentValues.put("name", name);
-                                contentValues.put("targeturl", list.get(i).getTargetUrl());
-                                contentValues.put("source", source);
-                                contentValues.put("time", time);
-                                database.insert("recordtable", null, contentValues);
-                            }
-                        }
-                        cursor.close();
                     }
                 });
             }
@@ -164,43 +124,6 @@ public class MainActivity extends AppCompatActivity
                         intent.putExtra("name",name);
                         intent.putExtra("source",source);
                         startActivity(intent);
-                        Cursor cursor = database.query("recordtable", new String[]{"id", "name", "targeturl", "source", "time"}, null, null, null, null, "time");
-                        int tag = 0;
-                        int tag1=0;
-                        while (cursor.moveToNext()) {
-                            int urlindex = cursor.getColumnIndex("targeturl");
-                            String url = cursor.getString(urlindex);
-                            tag++;
-                            if (url.equals(list1.get(i).getTargetUrl())) {
-                                ContentValues values = new ContentValues();
-                                values.put("time", time);
-                                database.update("recordtable", values, "targeturl=?", new String[]{list1.get(i).getTargetUrl()});
-                                tag1=1;
-                            }
-                        }
-                        if(tag1==0){
-                            if (tag < 15) {
-                                ContentValues contentValues = new ContentValues();
-                                contentValues.put("name", name);
-                                contentValues.put("targeturl", list1.get(i).getTargetUrl());
-                                contentValues.put("source", source);
-                                contentValues.put("time", time);
-                                database.insert("recordtable", null, contentValues);
-                            }
-                            else if(tag==15){
-                                cursor.moveToFirst();
-                                int timeindex = cursor.getColumnIndex("time");
-                                String time1 = cursor.getString(timeindex);
-                                database.delete("recordtable","time=?",new String[]{time1});
-                                ContentValues contentValues = new ContentValues();
-                                contentValues.put("name", name);
-                                contentValues.put("targeturl", list1.get(i).getTargetUrl());
-                                contentValues.put("source", source);
-                                contentValues.put("time", time);
-                                database.insert("recordtable", null, contentValues);
-                            }
-                        }
-                        cursor.close();
                     }
                 });
             }
@@ -223,43 +146,6 @@ public class MainActivity extends AppCompatActivity
                         intent.putExtra("name",name);
                         intent.putExtra("source",source);
                         startActivity(intent);
-                        Cursor cursor = database.query("recordtable", new String[]{"id", "name", "targeturl", "source", "time"}, null, null, null, null, "time");
-                        int tag = 0;
-                        int tag1=0;
-                        while (cursor.moveToNext()) {
-                            int urlindex = cursor.getColumnIndex("targeturl");
-                            String url = cursor.getString(urlindex);
-                            tag++;
-                            if (url.equals(list2.get(i).getTargetUrl())) {
-                                ContentValues values = new ContentValues();
-                                values.put("time", time);
-                                database.update("recordtable", values, "targeturl=?", new String[]{list2.get(i).getTargetUrl()});
-                                tag1=1;
-                            }
-                        }
-                        if(tag1==0){
-                            if (tag < 15) {
-                                ContentValues contentValues = new ContentValues();
-                                contentValues.put("name", name);
-                                contentValues.put("targeturl", list2.get(i).getTargetUrl());
-                                contentValues.put("source", source);
-                                contentValues.put("time", time);
-                                database.insert("recordtable", null, contentValues);
-                            }
-                            else if(tag==15){
-                                cursor.moveToFirst();
-                                int timeindex = cursor.getColumnIndex("time");
-                                String time1 = cursor.getString(timeindex);
-                                database.delete("recordtable","time=?",new String[]{time1});
-                                ContentValues contentValues = new ContentValues();
-                                contentValues.put("name", name);
-                                contentValues.put("targeturl", list2.get(i).getTargetUrl());
-                                contentValues.put("source", source);
-                                contentValues.put("time", time);
-                                database.insert("recordtable", null, contentValues);
-                            }
-                        }
-                        cursor.close();
                     }
                 });
             }
@@ -282,43 +168,6 @@ public class MainActivity extends AppCompatActivity
                         intent.putExtra("name",name);
                         intent.putExtra("source",source);
                         startActivity(intent);
-                        Cursor cursor = database.query("recordtable", new String[]{"id", "name", "targeturl", "source", "time"}, null, null, null, null, "time");
-                        int tag = 0;
-                        int tag1=0;
-                        while (cursor.moveToNext()) {
-                            int urlindex = cursor.getColumnIndex("targeturl");
-                            String url = cursor.getString(urlindex);
-                            tag++;
-                            if (url.equals(list3.get(i).getTargetUrl())) {
-                                ContentValues values = new ContentValues();
-                                values.put("time", time);
-                                database.update("recordtable", values, "targeturl=?", new String[]{list3.get(i).getTargetUrl()});
-                                tag1=1;
-                            }
-                        }
-                        if(tag1==0){
-                            if (tag < 15) {
-                                ContentValues contentValues = new ContentValues();
-                                contentValues.put("name", name);
-                                contentValues.put("targeturl", list3.get(i).getTargetUrl());
-                                contentValues.put("source", source);
-                                contentValues.put("time", time);
-                                database.insert("recordtable", null, contentValues);
-                            }
-                            else if(tag==15){
-                                cursor.moveToFirst();
-                                int timeindex = cursor.getColumnIndex("time");
-                                String time1 = cursor.getString(timeindex);
-                                database.delete("recordtable","time=?",new String[]{time1});
-                                ContentValues contentValues = new ContentValues();
-                                contentValues.put("name", name);
-                                contentValues.put("targeturl", list3.get(i).getTargetUrl());
-                                contentValues.put("source", source);
-                                contentValues.put("time", time);
-                                database.insert("recordtable", null, contentValues);
-                            }
-                        }
-                        cursor.close();
                     }
                 });
             }

@@ -1,6 +1,5 @@
 package com.example.administrator.Jsoupread;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -22,7 +21,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -74,14 +72,14 @@ public class RecordActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view,
                                     int position, long id) {
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+                String time = df.format(new Date());
                 Intent intent = new Intent(RecordActivity.this, SecondActivity.class);
                 intent.putExtra("url", list.get(position).getTargeturl());
+                intent.putExtra("time", time);
+                intent.putExtra("name", list.get(position).getName());
+                intent.putExtra("source", list.get(position).getSource());
                 startActivity(intent);
-                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-                String time=df.format(new Date());
-                ContentValues values = new ContentValues();
-                values.put("time",time);
-                database.update("recordtable",values,"targeturl=?",new String[]{list.get(position).getTargeturl()});
             }
 
         });

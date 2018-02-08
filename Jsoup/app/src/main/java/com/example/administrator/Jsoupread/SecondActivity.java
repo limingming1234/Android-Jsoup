@@ -27,21 +27,67 @@ public class SecondActivity extends Activity {
     TextView beginLoading,endLoading,loading,mTitle;
     Intent mIntent;
     private String url1;
-    String time;
-    String name;
-    String source;
+    private String time;
+    private String name;
+    private String source;
+    private int tag;
+    private int tag1;
     private MySQLiteHelper mySQLiteHelper;  // 申明一个数据库管理助手对象
     private SQLiteDatabase database;// 申明一个数据库对象
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-
+        //获取目标文章的链接
+        mIntent = getIntent();
+        url1 = mIntent.getStringExtra("url");
+        time=mIntent.getStringExtra("time");
+        name=mIntent.getStringExtra("name");
+        source=mIntent.getStringExtra("source");
         // 构造一个数据库管理助手对象
         mySQLiteHelper=new MySQLiteHelper(this,"yuedu.db",null,1);
         //该方法创建一个数据库，可以读写，磁盘满了会自动更改模式为只读模式，getWritableDatabase()盘满报错
         database=mySQLiteHelper.getReadableDatabase();
         database.execSQL("create table if not exists mytable(id integer primary key autoincrement,name text,targeturl text,source text,time text)");
+        database.execSQL("create table if not exists recordtable(id integer primary key autoincrement,name text,targeturl text,source text,time text)");
+        Cursor cursor = database.query("recordtable", new String[]{"id", "name", "targeturl", "source", "time"}, null, null, null, null, "time");
+        tag = 0;
+        tag1=0;
+        while (cursor.moveToNext()) {
+            int urlindex = cursor.getColumnIndex("targeturl");
+            String url = cursor.getString(urlindex);
+            tag++;
+            if (url.equals(url1)) {
+                ContentValues values = new ContentValues();
+                values.put("time", time);
+                database.update("recordtable", values, "targeturl=?", new String[]{url1});
+                tag1=1;
+            }
+        }
+        if(tag1==0){
+            if (tag < 15) {
+                ContentValues contentValues = new ContentValues();
+                contentValues.put("name", name);
+                contentValues.put("targeturl", url1);
+                contentValues.put("source", source);
+                contentValues.put("time", time);
+                database.insert("recordtable", null, contentValues);
+            }
+            else if(tag==15){
+                cursor.moveToFirst();
+                int timeindex = cursor.getColumnIndex("time");
+                String time1 = cursor.getString(timeindex);
+                database.delete("recordtable","time=?",new String[]{time1});
+                ContentValues contentValues = new ContentValues();
+                contentValues.put("name", name);
+                contentValues.put("targeturl", url1);
+                contentValues.put("source", source);
+                contentValues.put("time", time);
+                database.insert("recordtable", null, contentValues);
+            }
+        }
+        cursor.close();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,14 +95,8 @@ public class SecondActivity extends Activity {
                 int tag=0;
                 Cursor cursor=database .query("mytable",new String[]{"id","name","targeturl","source","time"},null,null,null,null,null);
                 while (cursor.moveToNext()){
-                    int nameindex=cursor.getColumnIndex("name");
-                    String name=cursor.getString(nameindex);
                     int urlindex=cursor.getColumnIndex("targeturl");
                     String url=cursor.getString(urlindex);
-                    int sourceindex=cursor.getColumnIndex("source");
-                    String source=cursor.getString(sourceindex);
-                    int timeindex=cursor.getColumnIndex("time");
-                    String time=cursor.getString(timeindex);
                     if(url1.equals(url)){
                         tag=1;
                         Snackbar.make(view, "已收藏", Snackbar.LENGTH_LONG)
@@ -77,12 +117,7 @@ public class SecondActivity extends Activity {
                 cursor.close();
             }
         });
-        //获取目标文章的链接
-        mIntent = getIntent();
-        url1 = mIntent.getStringExtra("url");
-        time=mIntent.getStringExtra("time");
-        name=mIntent.getStringExtra("name");
-        source=mIntent.getStringExtra("source");
+
         mWebview = (WebView) findViewById(R.id.webView1);
         beginLoading = (TextView) findViewById(R.id.text_beginLoading);
         endLoading = (TextView) findViewById(R.id.text_endLoading);
