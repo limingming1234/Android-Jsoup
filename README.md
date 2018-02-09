@@ -12,4 +12,6 @@
 2018/2/7
 使用开源项目LeakCanary查找内存泄漏问题，发现在activity销毁时数据库对象没有关闭，通过重写onDestroy()方法解决。千里之堤毁于蚁穴，今后编程中需注意。
 2018/2/8
-1.修复历史记录更新bug，优化代码。
+修复历史记录更新bug，优化代码。
+2018/2/9
+1.SwipeRefreshLayout+TabLayout+ViewPager+Fragment实现滑动翻页和下拉刷新功能。
