@@ -14,64 +14,20 @@
         android:background="#FFFFFF"
         android:orientation="vertical"
         >
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="50.0dip"
-        android:background="#FFFFFF"
-        >
-
-        <!--layout_weight这个属性为权重，让四个button平分这个linearLayout-->
-        <Button
-            android:id="@+id/viewzhihu"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/mTb"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:gravity="center"
-            android:text="知乎日报"
-            android:textColor="#000000"
-            android:textSize="15dip"
-            />
-
-        <Button
-            android:id="@+id/viewgk"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="#dd1219"
+            app:tabSelectedTextColor="#1256dd"
+            app:tabTextColor="#000000"
+            >
+        </android.support.design.widget.TabLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:gravity="center"
-            android:text="果壳"
-            android:textColor="#000000"
-            android:textSize="15dip"
-            />
-
-        <Button
-            android:id="@+id/viewjs"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:gravity="center"
-            android:text="简书"
-            android:textColor="#000000"
-            android:textSize="15dip"
-            />
-        <Button
-            android:id="@+id/viewcn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:gravity="center"
-            android:text="网易创业Club"
-            android:textColor="#000000"
-            android:textSize="12dip"
-            />
-
-
-    </LinearLayout>
-    <ListView
-        android:id="@+id/info_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="#cccccc"
-        android:dividerHeight="0.5dp"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mTb">
+        </android.support.v4.view.ViewPager>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

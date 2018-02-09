@@ -1,0 +1,16 @@
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/refresh1"
+    tools:context="com.example.administrator.Jsoupread.Fragment.Blank1Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ListView
+        android:id="@+id/info_list_view1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#cccccc"
+        android:dividerHeight="0.5dp"/>
+
+</android.support.v4.widget.SwipeRefreshLayout>
