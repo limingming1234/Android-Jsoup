@@ -1,12 +1,11 @@
 package com.example.administrator.Jsoupread.bean;
 
-import java.io.Serializable;
 
 /**
  * Created by Administrator on 2018/2/4.
  */
 
-public class historyBean implements Serializable {
+public class historyBean {
     private  String name;
     private  String targeturl;
     private  String source;

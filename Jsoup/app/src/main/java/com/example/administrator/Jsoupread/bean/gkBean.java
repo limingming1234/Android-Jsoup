@@ -1,12 +1,11 @@
 package com.example.administrator.Jsoupread.bean;
 
-import java.io.Serializable;
 
 /**
  * Created by Administrator on 2018/2/3.
  */
 
-public class gkBean implements Serializable {
+public class gkBean {
     private String targetUrl;
     private String img;
     private String name;
