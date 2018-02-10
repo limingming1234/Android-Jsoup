@@ -14,4 +14,4 @@
 2018/2/8
 修复历史记录更新bug，优化代码。
 2018/2/9
-1.SwipeRefreshLayout+TabLayout+ViewPager+Fragment实现滑动翻页和下拉刷新功能。
+SwipeRefreshLayout+TabLayout+ViewPager+Fragment实现滑动翻页和下拉刷新功能。
