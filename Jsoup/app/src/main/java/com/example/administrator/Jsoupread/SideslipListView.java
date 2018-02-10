@@ -67,10 +67,11 @@ public class SideslipListView extends ListView {
                 Log.i(TAG, "*******pointToPosition(mDownX, mDownY): " + mPointPosition);
                 if (mPointPosition != -1) {
                     if (isDeleteShow) {
-                        ViewGroup tmpViewGroup = (ViewGroup) getChildAt(mPointPosition - getFirstVisiblePosition());
-                        if (!mPointChild.equals(tmpViewGroup)) {
+                        isAllowItemClick= false;
+                        //ViewGroup tmpViewGroup = (ViewGroup) getChildAt(mPointPosition - getFirstVisiblePosition());
+                        //if (!mPointChild.equals(tmpViewGroup)) {
                             turnNormal();
-                        }
+                        //}
                     }
                     //获取当前的item
                     mPointChild = (ViewGroup) getChildAt(mPointPosition - getFirstVisiblePosition());
@@ -125,11 +126,12 @@ public class SideslipListView extends ListView {
         mDownX = (int) ev.getX();
         mDownY = (int) ev.getY();
         if (isDeleteShow) {
-            ViewGroup tmpViewGroup = (ViewGroup) getChildAt(pointToPosition(mDownX, mDownY) - getFirstVisiblePosition());
-            Log.i(TAG, "*********mPointChild.equals(tmpViewGroup): " + mPointChild.equals(tmpViewGroup));
-            if (!mPointChild.equals(tmpViewGroup)) {
+            isAllowItemClick= false;
+            //ViewGroup tmpViewGroup = (ViewGroup) getChildAt(pointToPosition(mDownX, mDownY) - getFirstVisiblePosition());
+            //Log.i(TAG, "*********mPointChild.equals(tmpViewGroup): " + mPointChild.equals(tmpViewGroup));
+            //if (!mPointChild.equals(tmpViewGroup)) {
                 turnNormal();
-            }
+            //}
         }
         //获取当前的item
         mPointChild = (ViewGroup) getChildAt(pointToPosition(mDownX, mDownY) - getFirstVisiblePosition());
@@ -171,7 +173,7 @@ public class SideslipListView extends ListView {
 
     private void performActionUp(MotionEvent ev) {
         //如果向左滑出超过隐藏的二分之一就全部显示
-        if (-mItemLayoutParams.leftMargin >= mDeleteWidth / 2) {
+        if (-mItemLayoutParams.leftMargin >= mDeleteWidth *1/3) {
             mItemLayoutParams.leftMargin = -mDeleteWidth;
             isDeleteShow = true;
             mPointChild.getChildAt(0).setLayoutParams(mItemLayoutParams);
